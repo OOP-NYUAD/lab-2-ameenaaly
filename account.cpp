@@ -51,7 +51,7 @@ public:
     // Function to withdraw an amount from the account.
     void withdraw(double withdrawlAmount){
         if (balance < withdrawlAmount)
-            cout << "Insufficient Funds!\n";
+            cout << "Insufficient funds!\n";
         else
             balance = balance - withdrawlAmount;
     }
@@ -59,7 +59,7 @@ public:
     // Destructor.
     // Display a message indicating the account is being destroyed.
     ~Account(){
-        cout << "Your account is with balance " << balance << " is being destroyed.\n";
+        cout << "Account with balance " << balance << " is being destroyed.\n";
     };
 };
 
