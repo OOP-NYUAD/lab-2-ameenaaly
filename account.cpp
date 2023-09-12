@@ -12,8 +12,10 @@
 //    d. Function 'withdraw' that takes an amount and subtracts it from the balance.
 // 4. A destructor that displays a message like "Account with balance <balance_value> is being destroyed."
 
-#ifndef ACCOUNT_H
-#define ACCOUNT_H
+
+using namespace std;
+
+
 
 class Account {
 private:
@@ -21,29 +23,44 @@ private:
     double balance;
 
 public:
-    // Default constructor.
-    // Initialize 'balance' to 0.
-    // TODO: Implement the default constructor.
+    // Default constructor that initializes 'balance' to 0.
+    Account(){
+        balance = 0;
+    };
 
-    // Parameterized constructor.
-    // Initialize 'balance' with the provided 'initialBalance'.
-    // TODO: Implement the parameterized constructor.
+    // Parameterized constructor that initializes 'balance' with the provided 'initialBalance'.
+    Account(double initialBalance){
+        balance = initialBalance;
+    };
 
     // Getter function to return the current balance.
-    // TODO: Implement the 'getBalance' function.
+    double getBalance(){
+        return balance;
+    }
 
     // Setter function to set the balance to a new value.
-    // TODO: Implement the 'setBalance' function.
+    void setBalance(double inputBalance){
+        balance = inputBalance;
+    }
 
     // Function to deposit an amount into the account.
-    // TODO: Implement the 'deposit' function.
+    void deposit(double depositAmount){
+        balance += depositAmount;
+    }
 
     // Function to withdraw an amount from the account.
-    // TODO: Implement the 'withdraw' function.
+    void withdraw(double withdrawlAmount){
+        if (balance < withdrawlAmount)
+            cout << "Insufficient Funds!\n";
+        else
+            balance = balance - withdrawlAmount;
+    }
 
     // Destructor.
     // Display a message indicating the account is being destroyed.
-    // TODO: Implement the destructor.
+    ~Account(){
+        cout << "Your account is with balance " << balance << " is being destroyed.\n";
+    };
 };
 
-#endif // ACCOUNT_H
+
